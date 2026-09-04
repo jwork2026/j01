@@ -9,7 +9,7 @@
 
 桥段场景如下：
 
-![](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/jwork-2026/j01/master/example/uml/timeline.pu)
+![](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/jwork2026/j01/master/example/uml/timeline.pu)
 
 以下运行结果仅为示意，具体输出以实际运行为准：
 
