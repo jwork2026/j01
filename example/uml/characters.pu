@@ -1,0 +1,61 @@
+@startuml
+
+class Being {
+    ~name: String
+    ~Being(name: String)
+}
+
+class Creature {
+    ~health: int
+    ~attack: int
+    ~defense: int
+    ~memory: String[]
+    ~memoryOffset: int
+
+    +Creature(name: String)
+    +speakTo(creature: Creature, something: String): void
+    +listen(something: String): void
+    +attack(creature: Creature): void
+    +receiveAttack(ap: int): void
+    +isDead(): boolean
+    +move(): void
+}
+
+class Human {
+    ~Human(name: String)
+}
+
+class Monster {
+    ~magic: int
+    ~Monster(name: String, hp: int, ap: int, dp: int, mp: int)
+    +attack(creature: Creature): void
+    +rolleyes(): void
+    +bePissed(): void
+}
+
+class SpiderWeb {
+    ~SpiderWeb()
+    +open(): void
+    +close(): void
+}
+
+class Scene {
+    ~spiderWeb: SpiderWeb
+    ~oldman: Human
+    ~snake: Monster
+    ~scorpion: Monster
+    +Scene()
+    +play(): void
+    {static} +main(args: String[]): void
+}
+
+Creature --|> Being
+Human --|> Creature
+Monster --|> Creature
+SpiderWeb --|> Being
+
+Scene *-- SpiderWeb : spiderWeb
+Scene *-- Human : oldman
+Scene *-- "2" Monster : snake, scorpion
+
+@enduml
